@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://b6xbmtiekgpkt"]
 
 [ext_resource type="PackedScene" uid="uid://p4meo1f4vm7p" path="res://source/scenes/player/player.tscn" id="1_4id4m"]
+[ext_resource type="PackedScene" uid="uid://ddhc0o1n8ccdd" path="res://source/scenes/menu/menu.tscn" id="2_akbd6"]
 
 [node name="Main" type="Node" unique_id=903600086]
 
 [node name="Player" parent="." unique_id=703791611 instance=ExtResource("1_4id4m")]
+
+[node name="Main Menu" type="CanvasLayer" parent="." unique_id=1037938286]
+follow_viewport_enabled = true
+
+[node name="main menu" parent="Main Menu" unique_id=294159731 instance=ExtResource("2_akbd6")]

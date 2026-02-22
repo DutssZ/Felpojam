@@ -1,0 +1,426 @@
+[gd_scene format=3 uid="uid://ddhc0o1n8ccdd"]
+
+[ext_resource type="Script" uid="uid://byts5illanyl4" path="res://source/scenes/menu/menu.gd" id="1_5nbys"]
+[ext_resource type="Texture2D" uid="uid://re6xosxa3cjn" path="res://source/assets/interface/Title.png" id="1_71ivl"]
+[ext_resource type="Script" uid="uid://c0f3pkgmh0r7p" path="res://source/scenes/menu/fade.gd" id="3_ta3d6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygumm"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klg7u"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="menu" type="Control" unique_id=294159731]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5nbys")
+
+[node name="Menu Inicial" type="Control" parent="." unique_id=610768884]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu Inicial" unique_id=1416906518]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Margin Left" type="Control" parent="Menu Inicial/HBoxContainer" unique_id=827369043]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu Inicial/HBoxContainer" unique_id=771486923]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Margin Top" type="Control" parent="Menu Inicial/HBoxContainer/VBoxContainer" unique_id=546948535]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Title" type="TextureRect" parent="Menu Inicial/HBoxContainer/VBoxContainer" unique_id=668134087]
+clip_contents = true
+layout_mode = 2
+texture = ExtResource("1_71ivl")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Window" type="Control" parent="Menu Inicial/HBoxContainer/VBoxContainer" unique_id=1724088138]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Jogar" type="Button" parent="Menu Inicial/HBoxContainer/VBoxContainer" unique_id=611846026]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Jogar"
+
+[node name="Configurações" type="Button" parent="Menu Inicial/HBoxContainer/VBoxContainer" unique_id=298280876]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Configurações"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu Inicial/HBoxContainer/VBoxContainer" unique_id=1614384012]
+layout_mode = 2
+
+[node name="Conquistas" type="Button" parent="Menu Inicial/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1482608480]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Conquistas"
+text_overrun_behavior = 2
+
+[node name="Créditos" type="Button" parent="Menu Inicial/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1807717192]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Créditos"
+text_overrun_behavior = 2
+
+[node name="Sair" type="Button" parent="Menu Inicial/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=219442010]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Sair"
+text_overrun_behavior = 2
+
+[node name="Margin Bottom" type="Control" parent="Menu Inicial/HBoxContainer/VBoxContainer" unique_id=1674719268]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Margin Right" type="Control" parent="Menu Inicial/HBoxContainer" unique_id=101432088]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Configurações" type="Control" parent="." unique_id=1799236665]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Configurações" unique_id=169439507]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="Configurações/MarginContainer" unique_id=2029989708]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Configurações/MarginContainer/PanelContainer" unique_id=1387833475]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Configurações/MarginContainer/PanelContainer/MarginContainer" unique_id=1892718685]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2" unique_id=349313449]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Video e Acessibilidade" type="VBoxContainer" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer" unique_id=1092698228]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade" unique_id=1954134467]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "Video"
+fit_content = true
+
+[node name="Tela Cheia" type="HBoxContainer" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade" unique_id=1655162490]
+layout_mode = 2
+
+[node name="Tela Cheia" type="CheckBox" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade/Tela Cheia" unique_id=1275673676]
+layout_mode = 2
+button_pressed = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade/Tela Cheia" unique_id=1825240913]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Tela Cheia"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Resolução" type="HBoxContainer" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade" unique_id=1759972011]
+layout_mode = 2
+
+[node name="MenuButton" type="MenuButton" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade/Resolução" unique_id=95154388]
+layout_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade/Resolução" unique_id=245064539]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "Resolução"
+fit_content = true
+autowrap_mode = 0
+
+[node name="AniSerrilhamento" type="HBoxContainer" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade" unique_id=552254983]
+layout_mode = 2
+
+[node name="Anti Serrilhamento" type="CheckBox" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade/AniSerrilhamento" unique_id=1660006908]
+layout_mode = 2
+disabled = true
+button_pressed = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade/AniSerrilhamento" unique_id=1559352916]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Anti-serrilhamento"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Sombras" type="HBoxContainer" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade" unique_id=1842419121]
+layout_mode = 2
+
+[node name="Sombras" type="CheckBox" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade/Sombras" unique_id=1914502456]
+layout_mode = 2
+disabled = true
+button_pressed = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade/Sombras" unique_id=909154836]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Sombras"
+fit_content = true
+autowrap_mode = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade" unique_id=1964605922]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "Acessibilidade"
+fit_content = true
+
+[node name="Efeitos" type="HBoxContainer" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade" unique_id=512872992]
+layout_mode = 2
+
+[node name="Efeitos" type="CheckBox" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade/Efeitos" unique_id=1066373814]
+layout_mode = 2
+disabled = true
+button_pressed = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade/Efeitos" unique_id=896115840]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Efeitos"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Tremor" type="HBoxContainer" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade" unique_id=1402600961]
+layout_mode = 2
+
+[node name="Tremor" type="CheckBox" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade/Tremor" unique_id=1654606217]
+layout_mode = 2
+disabled = true
+button_pressed = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade/Tremor" unique_id=657263377]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Tremor de Tela"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Som e Extras" type="VBoxContainer" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer" unique_id=1022954501]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Áudio" type="RichTextLabel" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Som e Extras" unique_id=1388984699]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "Áudio"
+fit_content = true
+
+[node name="Volume dos Sons" type="RichTextLabel" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Som e Extras" unique_id=262943263]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Volume dos Sons"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Som" type="HSlider" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Som e Extras" unique_id=603771074]
+layout_mode = 2
+value = 50.0
+editable = false
+
+[node name="Volume dos Sons2" type="RichTextLabel" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Som e Extras" unique_id=1537139977]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Volume da Música"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Música" type="HSlider" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Som e Extras" unique_id=629666455]
+layout_mode = 2
+value = 50.0
+editable = false
+
+[node name="Extra" type="RichTextLabel" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Som e Extras" unique_id=1019737734]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "Extras"
+fit_content = true
+
+[node name="Reassistir Animação" type="HBoxContainer" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Som e Extras" unique_id=406810080]
+layout_mode = 2
+
+[node name="Cutscene" type="CheckBox" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Som e Extras/Reassistir Animação" unique_id=1003327113]
+layout_mode = 2
+disabled = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Som e Extras/Reassistir Animação" unique_id=379456605]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Reassistir cutscene inicial"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Voltar" type="Button" parent="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2" unique_id=646847699]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+
+[node name="Conquistas" type="Control" parent="." unique_id=2066205669]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Conquistas" unique_id=962000883]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="Conquistas/MarginContainer" unique_id=1296043333]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Conquistas/MarginContainer/PanelContainer" unique_id=389299308]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Conquistas/MarginContainer/PanelContainer/MarginContainer" unique_id=1326884037]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Conquistas/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2" unique_id=323739415]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Voltar" type="Button" parent="Conquistas/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2" unique_id=958094151]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+
+[node name="Créditos" type="Control" parent="." unique_id=1506349661]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Créditos" unique_id=569584500]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="Créditos/MarginContainer" unique_id=214558029]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Créditos/MarginContainer/PanelContainer" unique_id=56598285]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Créditos/MarginContainer/PanelContainer/MarginContainer" unique_id=1508395471]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Créditos/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2" unique_id=1592503133]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Voltar" type="Button" parent="Créditos/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2" unique_id=1518868644]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+
+[node name="Fade" type="ProgressBar" parent="." unique_id=428696675]
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ygumm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_klg7u")
+fill_mode = 1
+show_percentage = false
+script = ExtResource("3_ta3d6")
+
+[connection signal="pressed" from="Menu Inicial/HBoxContainer/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Menu Inicial/HBoxContainer/VBoxContainer/Configurações" to="." method="_on_configurações_pressed"]
+[connection signal="pressed" from="Menu Inicial/HBoxContainer/VBoxContainer/HBoxContainer/Conquistas" to="." method="_on_conquistas_pressed"]
+[connection signal="pressed" from="Menu Inicial/HBoxContainer/VBoxContainer/HBoxContainer/Créditos" to="." method="_on_créditos_pressed"]
+[connection signal="pressed" from="Menu Inicial/HBoxContainer/VBoxContainer/HBoxContainer/Sair" to="." method="_on_sair_pressed"]
+[connection signal="toggled" from="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade/Tela Cheia/Tela Cheia" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="Conquistas/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="Créditos/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="blackout" from="Fade" to="." method="_on_fade_blackout"]
