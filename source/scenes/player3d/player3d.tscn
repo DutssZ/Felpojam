@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dsvw8v6r8207s"]
+
+[ext_resource type="Script" uid="uid://cvacw3kq3m3sl" path="res://source/scenes/player3d/player_3d.gd" id="1_ivmhy"]
+[ext_resource type="SpriteFrames" uid="uid://q8dnva7rjer0" path="res://source/scenes/player3d/player_frames.tres" id="2_6uvro"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t03yv"]
+radius = 0.41552734
+height = 1.8411331
+
+[node name="Player3D" type="CharacterBody3D" unique_id=2492256 node_paths=PackedStringArray("SPRITE", "DASH_TIMER")]
+collision_mask = 6
+axis_lock_linear_y = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_ivmhy")
+SPRITE = NodePath("AnimatedSprite3D")
+DASH_TIMER = NodePath("DashTimer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=144194629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5319786, 0)
+shape = SubResource("CapsuleShape3D_t03yv")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=94618657]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 0.967, 0, 0.69027483, 0)
+billboard = 1
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = ExtResource("2_6uvro")
+animation = &"Idle - East"
+autoplay = "Idle - South"
+
+[node name="DashTimer" type="Timer" parent="." unique_id=955003062]
+one_shot = true
