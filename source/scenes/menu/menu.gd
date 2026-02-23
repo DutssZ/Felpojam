@@ -33,7 +33,8 @@ func _on_créditos_pressed() -> void:
 	FadePlay()
 
 func _on_sair_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().quit()
+	#pass # Replace with function body.
 
 ##Configurações
 func _on_tela_cheia_toggled(toggled_on: bool) -> void:
