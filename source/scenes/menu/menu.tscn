@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://byts5illanyl4" path="res://source/scenes/menu/menu.gd" id="1_5nbys"]
 [ext_resource type="Texture2D" uid="uid://re6xosxa3cjn" path="res://source/assets/interface/Title.png" id="1_71ivl"]
 [ext_resource type="Script" uid="uid://c0f3pkgmh0r7p" path="res://source/scenes/menu/fade.gd" id="3_ta3d6"]
+[ext_resource type="Script" uid="uid://bxa4l8qg7mfwe" path="res://source/scenes/menu/saida_menu.gd" id="3_ygumm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ta3d6"]
+bg_color = Color(0.28485027, 0.2848503, 0.28485018, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygumm"]
 bg_color = Color(0, 0, 0, 0)
@@ -11,6 +15,7 @@ bg_color = Color(0, 0, 0, 0)
 bg_color = Color(0, 0, 0, 1)
 
 [node name="Menu" type="Control" unique_id=294159731]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -399,6 +404,155 @@ size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 24
 text = "Voltar"
 
+[node name="Saída" type="Control" parent="." unique_id=681574215]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_ygumm")
+
+[node name="MarginContainer" type="MarginContainer" parent="Saída" unique_id=1102372686]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Saída/MarginContainer" unique_id=1847590157]
+layout_mode = 2
+
+[node name="Margin Up" type="Control" parent="Saída/MarginContainer/VBoxContainer" unique_id=1447660662]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Saída/MarginContainer/VBoxContainer" unique_id=1277056228]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Margin Left" type="Control" parent="Saída/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1051258026]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Confirmar Sair" type="Button" parent="Saída/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1438891967]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_ta3d6")
+text = "Sair?"
+
+[node name="Margin Right" type="Control" parent="Saída/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2032243212]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Margin Down" type="Control" parent="Saída/MarginContainer/VBoxContainer" unique_id=1859524447]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Voltar Saída" type="Button" parent="Saída/MarginContainer" unique_id=1950225493]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+
+[node name="Pause" type="Control" parent="." unique_id=1404339303]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Pause" unique_id=1889255369]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left Margin" type="Control" parent="Pause/HBoxContainer" unique_id=1868357596]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/HBoxContainer" unique_id=1201376667]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Top Margin" type="Control" parent="Pause/HBoxContainer/VBoxContainer" unique_id=920526220]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Panel" type="Panel" parent="Pause/HBoxContainer/VBoxContainer" unique_id=1952389733]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause/HBoxContainer/VBoxContainer/Panel" unique_id=1658901346]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/HBoxContainer/VBoxContainer/Panel/MarginContainer" unique_id=539216388]
+layout_mode = 2
+
+[node name="Continuar" type="Button" parent="Pause/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=402711152]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
+text = "Continuar Jogo"
+
+[node name="Configurações" type="Button" parent="Pause/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=77532634]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
+text = "Configurações"
+
+[node name="Conquistas" type="Button" parent="Pause/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=2092121812]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
+text = "Conquistas"
+
+[node name="Terminar Jogo" type="Button" parent="Pause/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer" unique_id=542356945]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
+text = "Sair para a tela inicial"
+
+[node name="Bottom Margin" type="Control" parent="Pause/HBoxContainer/VBoxContainer" unique_id=1771813292]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Right Margin" type="Control" parent="Pause/HBoxContainer" unique_id=1670660597]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+
 [node name="Fade" type="ProgressBar" parent="." unique_id=428696675]
 z_index = 100
 layout_mode = 1
@@ -419,8 +573,15 @@ script = ExtResource("3_ta3d6")
 [connection signal="pressed" from="Menu Inicial/HBoxContainer/VBoxContainer/HBoxContainer/Conquistas" to="." method="_on_conquistas_pressed"]
 [connection signal="pressed" from="Menu Inicial/HBoxContainer/VBoxContainer/HBoxContainer/Créditos" to="." method="_on_créditos_pressed"]
 [connection signal="pressed" from="Menu Inicial/HBoxContainer/VBoxContainer/HBoxContainer/Sair" to="." method="_on_sair_pressed"]
-[connection signal="toggled" from="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade/Tela Cheia/Tela Cheia" to="." method="_on_check_box_toggled"]
+[connection signal="toggled" from="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/HBoxContainer/Video e Acessibilidade/Tela Cheia/Tela Cheia" to="." method="_on_tela_cheia_toggled"]
 [connection signal="pressed" from="Configurações/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="Conquistas/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="Créditos/MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="Saída/MarginContainer/VBoxContainer/HBoxContainer/Confirmar Sair" to="." method="_on_confirmar_sair_pressed"]
+[connection signal="pressed" from="Saída/MarginContainer/Voltar Saída" to="." method="_on_voltar_saída_pressed"]
+[connection signal="pressed" from="Pause/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="Pause/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/Configurações" to="." method="_on_configurações_pressed"]
+[connection signal="pressed" from="Pause/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/Conquistas" to="." method="_on_conquistas_pressed"]
+[connection signal="pressed" from="Pause/HBoxContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer/Terminar Jogo" to="." method="_on_terminar_jogo_pressed"]
 [connection signal="blackout" from="Fade" to="." method="_on_fade_blackout"]
+[connection signal="fadeEnded" from="Fade" to="." method="_on_fade_fade_ended"]

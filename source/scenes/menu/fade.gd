@@ -7,6 +7,7 @@ var wait = 0
 var maxWait = 1
 
 signal blackout()
+signal fadeEnded()
 
 func _process(delta: float) -> void:
 	if wait>0: wait -= delta
@@ -23,6 +24,7 @@ func _process(delta: float) -> void:
 			set_mouse_filter(MOUSE_FILTER_IGNORE)
 			playing = false
 			fill_mode = FILL_END_TO_BEGIN
+			fadeEnded.emit()
 
 
 func play():

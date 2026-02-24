@@ -12,6 +12,7 @@
 layer = 2
 
 [node name="Cursor" parent="Layer - Cursor" unique_id=448318404 instance=ExtResource("1_gu03f")]
+process_mode = 3
 
 [node name="Layer - Main Menu" type="CanvasLayer" parent="." unique_id=1037938286]
 follow_viewport_enabled = true
