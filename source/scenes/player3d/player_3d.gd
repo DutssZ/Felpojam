@@ -6,11 +6,11 @@ extends CharacterBody3D
 @export var DASH_SPEED := 15.0
 @export var DASH_DURATION := 0.15
 @export var DASH_COOLDOWN := 1.0
-@export var SMOOTHING := 5000.0
+@export_range(0.0, 1.0, 0.0001) var SMOOTHING := 0.9995
 
-@export_group("Nodes")
-@export var SPRITE: AnimatedSprite3D
-@export var DASH_TIMER: Timer
+# On ready
+@onready var SPRITE: AnimatedSprite3D = $AnimatedSprite3D
+@onready var DASH_TIMER: Timer = $DashTimer
 
 # Enum
 enum Direction {
