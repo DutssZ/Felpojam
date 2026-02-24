@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c517w47v7t4s4"]
+
+[ext_resource type="Script" uid="uid://sh6ck64df3v7" path="res://source/scenes/carimbo/carimbo.gd" id="1_shnse"]
+[ext_resource type="Resource" uid="uid://dswqgv8nemd1u" path="res://source/scenes/carimbo/templates/default_carimbo.tres" id="2_fxh7s"]
+[ext_resource type="Material" uid="uid://cifaw3sxikc3g" path="res://source/scenes/carimbo/carimbo_material.tres" id="2_jc8v7"]
+[ext_resource type="ArrayMesh" uid="uid://cuga1v41siybo" path="res://source/scenes/carimbo/mesh/demitido_mesh.tres" id="5_pqvly"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jm7m4"]
+size = Vector3(1, 0.8223877, 0.76342773)
+
+[node name="Carimbo" type="Node3D" unique_id=1970425901]
+script = ExtResource("1_shnse")
+Scale = 1.0
+Smoothing = 0.999
+CarimboConfig = ExtResource("2_fxh7s")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2095971492]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=470266525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.411, 0)
+shape = SubResource("BoxShape3D_jm7m4")
+
+[node name="ScalePivot" type="Marker3D" parent="Area3D" unique_id=518296071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0074330345, 0)
+
+[node name="MeshCarimbo" type="MeshInstance3D" parent="Area3D/ScalePivot" unique_id=596812943]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.013821609, 0)
+material_override = ExtResource("2_jc8v7")
+mesh = ExtResource("5_pqvly")
+
+[node name="CooldownTimer" type="Timer" parent="." unique_id=11287411]
+one_shot = true
