@@ -24,7 +24,7 @@ extends Node3D
 @onready var CooldownTimer: Timer = $CooldownTimer
 
 # Signals
-signal ground_stamped(position)
+signal ground_stamped(carimbo_transform: Transform3D, carimbo_resource: CarimboResource)
 
 # Const
 const RED := Color.LIGHT_CORAL
@@ -111,7 +111,8 @@ func fall() -> void:
 
 func play_fall_animation(duration: float) -> void:
 	var tween := create_tween()
-	var pos = Vector3(cursor_position.x, 0.0, cursor_position.z)
+	var carimbo_transform = Transform3D(AreaCarimbo.transform)
+	carimbo_transform.origin.y = 0.0
 	
 	# -- Anticipation
 	tween.tween_property(
@@ -124,7 +125,9 @@ func play_fall_animation(duration: float) -> void:
 		).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_EXPO)
 	
 	# Emit signal
-	tween.tween_callback(func(): ground_stamped.emit(pos))
+	tween.tween_callback(
+		func(): ground_stamped.emit(carimbo_transform, CarimboConfig)
+		)
 	
 	# Squash
 	tween.tween_property(

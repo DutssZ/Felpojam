@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://b6xbmtiekgpkt"]
 
+[ext_resource type="Script" uid="uid://dok412h0q24hh" path="res://source/scenes/main/main.gd" id="1_e8m3p"]
 [ext_resource type="PackedScene" uid="uid://qcsvg3gtgspu" path="res://source/scenes/cursor/cursor.tscn" id="1_gu03f"]
 [ext_resource type="PackedScene" uid="uid://ddhc0o1n8ccdd" path="res://source/scenes/menu/menu.tscn" id="2_akbd6"]
 [ext_resource type="PackedScene" uid="uid://dsvw8v6r8207s" path="res://source/scenes/player3d/player3d.tscn" id="2_gu03f"]
 [ext_resource type="PackedScene" uid="uid://c517w47v7t4s4" path="res://source/scenes/carimbo/carimbo.tscn" id="4_2ssni"]
 [ext_resource type="PackedScene" uid="uid://bravvabub3xss" path="res://source/scenes/world/world.tscn" id="4_5pj5g"]
 
-[node name="Main" type="Node3D" unique_id=1985852528]
+[node name="Main" type="Node3D" unique_id=1985852528 node_paths=PackedStringArray("Player", "Carimbo", "World")]
+script = ExtResource("1_e8m3p")
+Player = NodePath("Player3D")
+Carimbo = NodePath("Carimbo")
+World = NodePath("World")
 
 [node name="Layer - Cursor" type="CanvasLayer" parent="." unique_id=162440205]
 layer = 2
@@ -25,7 +30,9 @@ MAX_SPEED = 8.0
 DASH_SPEED = 20.0
 
 [node name="Carimbo" parent="." unique_id=1970425901 node_paths=PackedStringArray("Player") instance=ExtResource("4_2ssni")]
-Scale = 1.5
+Scale = 2.0
 Player = NodePath("../Player3D")
 
 [node name="World" parent="." unique_id=572738305 instance=ExtResource("4_5pj5g")]
+
+[connection signal="ground_stamped" from="Carimbo" to="." method="_on_carimbo_ground_stamped"]

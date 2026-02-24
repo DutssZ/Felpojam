@@ -20,3 +20,6 @@ extends Resource
 @export var CarimboImage: Texture2D
 ## Outras configurações (propriedade: valor)
 @export var Extras := {}
+
+## Método customizado
+func stamp() -> void: pass

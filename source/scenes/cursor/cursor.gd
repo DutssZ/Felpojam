@@ -24,3 +24,7 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		mouse_pos = event.position
+
+
+func set_image(image: Texture2D) -> void:
+	CursorSprite.texture = image

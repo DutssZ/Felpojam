@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CarimboResource" format=3 uid="uid://dswqgv8nemd1u"]
 
 [ext_resource type="ArrayMesh" uid="uid://cuga1v41siybo" path="res://source/scenes/carimbo/mesh/demitido_mesh.tres" id="1_6bmlw"]
-[ext_resource type="Texture2D" uid="uid://cpe0uf7a2u520" path="res://source/assets/sprites/marca/2000px Demitido.png" id="1_kiu7m"]
+[ext_resource type="Texture2D" uid="uid://bl1k3hbjrqr02" path="res://source/assets/sprites/marca/2000px Demitido.png" id="1_kiu7m"]
 [ext_resource type="Script" uid="uid://dcjfkt3tfvrap" path="res://source/common/carimbo_resource.gd" id="1_ulfk3"]
 
 [resource]

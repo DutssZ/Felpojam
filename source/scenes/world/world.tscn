@@ -7,11 +7,8 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_a7t70"]
 size = Vector3(9.400001, 1, 0.4)
 
-[node name="World" type="Node3D" unique_id=572738305 node_paths=PackedStringArray("Camera", "Background", "Light")]
+[node name="World" type="Node3D" unique_id=572738305]
 script = ExtResource("1_2lkty")
-Camera = NodePath("Camera3D")
-Background = NodePath("StaticBody3D/Background")
-Light = NodePath("DirectionalLight3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=228926369]
 collision_layer = 2
@@ -41,9 +38,10 @@ shape = SubResource("BoxShape3D_a7t70")
 transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, 0.99999994, 0, -1.0000001, -4.3711385e-08, 0, 5, 6)
 light_energy = 1.5
 shadow_enabled = true
+shadow_opacity = 0.75
 directional_shadow_mode = 0
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1291315970]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1312722614]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 5, 1.3667068)
 projection = 1
 size = 5.0
