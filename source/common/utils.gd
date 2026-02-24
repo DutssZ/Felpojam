@@ -1,13 +1,13 @@
 class_name Utils
 extends Node
 
-## Frame-rate dependant lerp function. 
-## Source and target should be of the same type. 
-## https://www.rorydriscoll.com/2016/03/07/frame-rate-independent-damping-using-lerp/
+# https://www.rorydriscoll.com/2016/03/07/frame-rate-independent-damping-using-lerp/
+## Frame-rate-independent lerp function. 
 static func damp(source, target, smoothing: float, delta: float):
 	assert(smoothing > 0 and smoothing < 1)
 	assert(delta > 0)
 	return lerp(source, target, 1.0 - pow(1.0 - smoothing, delta))
+
 
 ## Project the mouse position to a given plane above the ground
 static func project_cursor_to_plane(viewport: Viewport, plane_height: float) -> Vector3:
