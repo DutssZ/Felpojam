@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://b6xbmtiekgpkt"]
 
+[ext_resource type="PackedScene" uid="uid://qcsvg3gtgspu" path="res://source/scenes/cursor/cursor.tscn" id="1_gu03f"]
 [ext_resource type="PackedScene" uid="uid://ddhc0o1n8ccdd" path="res://source/scenes/menu/menu.tscn" id="2_akbd6"]
 [ext_resource type="PackedScene" uid="uid://dsvw8v6r8207s" path="res://source/scenes/player3d/player3d.tscn" id="2_gu03f"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_akbd6"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_akbd6"]
-size = Vector3(9.400001, 1, 0.4)
+[ext_resource type="PackedScene" uid="uid://c517w47v7t4s4" path="res://source/scenes/carimbo/carimbo.tscn" id="4_2ssni"]
+[ext_resource type="PackedScene" uid="uid://bravvabub3xss" path="res://source/scenes/world/world.tscn" id="4_5pj5g"]
 
 [node name="Main" type="Node3D" unique_id=1985852528]
+
+[node name="Layer - Cursor" type="CanvasLayer" parent="." unique_id=162440205]
+layer = 2
+
+[node name="Cursor" parent="Layer - Cursor" unique_id=448318404 instance=ExtResource("1_gu03f")]
 
 [node name="Layer - Main Menu" type="CanvasLayer" parent="." unique_id=1037938286]
 follow_viewport_enabled = true
@@ -17,39 +20,11 @@ follow_viewport_enabled = true
 
 [node name="Player3D" parent="." unique_id=2492256 instance=ExtResource("2_gu03f")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -4)
+MAX_SPEED = 8.0
+DASH_SPEED = 20.0
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1585991538]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 5, 1.3667068)
-projection = 1
-size = 5.0
-far = 20.0
+[node name="Carimbo" parent="." unique_id=1970425901 node_paths=PackedStringArray("Player") instance=ExtResource("4_2ssni")]
+Scale = 1.5
+Player = NodePath("../Player3D")
 
-[node name="World" type="StaticBody3D" parent="." unique_id=625036748]
-collision_layer = 2
-collision_mask = 7
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World" unique_id=694742167]
-transform = Transform3D(4.6926003, 0, 0, 0, 1, 0, 0, 0, 3.6757042, 0, 0, -3.6302464)
-mesh = SubResource("PlaneMesh_akbd6")
-
-[node name="Wall1" type="CollisionShape3D" parent="World" unique_id=1741100855]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0.09637054)
-shape = SubResource("BoxShape3D_akbd6")
-
-[node name="Wall2" type="CollisionShape3D" parent="World" unique_id=568338858]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -6.7896905)
-shape = SubResource("BoxShape3D_akbd6")
-
-[node name="Wall3" type="CollisionShape3D" parent="World" unique_id=508937985]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.709822, 0.4, -3.80363)
-shape = SubResource("BoxShape3D_akbd6")
-
-[node name="Wall4" type="CollisionShape3D" parent="World" unique_id=1612970494]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.688985, 0.4, -3.70363)
-shape = SubResource("BoxShape3D_akbd6")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2094265383]
-transform = Transform3D(0.9659258, -0.066987276, -0.24999997, 0.258819, 0.24999999, 0.9330127, 7.196708e-09, -0.965926, 0.258819, 0, 5, 6)
-light_energy = 1.5
-shadow_enabled = true
-directional_shadow_mode = 0
+[node name="World" parent="." unique_id=572738305 instance=ExtResource("4_5pj5g")]

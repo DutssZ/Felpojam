@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c7lxkw4am4y3r"]
+
+[ext_resource type="Script" uid="uid://cgqoxe3nkrrhr" path="res://source/scenes/marca/marca.gd" id="1_auawr"]
+
+[node name="Marca" type="Node3D" unique_id=140920904]
+script = ExtResource("1_auawr")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1096245865]
