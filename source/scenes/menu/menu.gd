@@ -20,15 +20,8 @@ const position_away = 1080.0
 @onready var activemenu = titleMenu
 @onready var to = titleMenu
 
-var i = 0
-
 func _ready() -> void:
 	ChangeMenu()
-	
-func _process(delta: float) -> void:
-	print(activemenu)
-	print(i)
-	i += 1
 
 func _input(event: InputEvent) -> void:
 	if (event.is_action_pressed("Pause") && activemenu == null && !ui_Animation_Playing):
