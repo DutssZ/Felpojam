@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c517w47v7t4s4"]
 
 [ext_resource type="Script" uid="uid://sh6ck64df3v7" path="res://source/scenes/carimbo/carimbo.gd" id="1_shnse"]
-[ext_resource type="Resource" uid="uid://dswqgv8nemd1u" path="res://source/scenes/carimbo/templates/default_carimbo.tres" id="2_fxh7s"]
+[ext_resource type="Resource" uid="uid://dmj2chay05owi" path="res://source/scenes/carimbo/templates/basic_carimbo.tres" id="2_fxh7s"]
 [ext_resource type="Material" uid="uid://cifaw3sxikc3g" path="res://source/scenes/carimbo/carimbo_material.tres" id="2_jc8v7"]
 [ext_resource type="ArrayMesh" uid="uid://cuga1v41siybo" path="res://source/scenes/carimbo/mesh/demitido_mesh.tres" id="5_pqvly"]
 
@@ -13,6 +13,10 @@ script = ExtResource("1_shnse")
 Scale = 1.0
 Smoothing = 0.999
 CarimboConfig = ExtResource("2_fxh7s")
+TEMPLATES = {
+"Basic": "res://source/scenes/carimbo/templates/basic_carimbo.tres",
+"Default": "res://source/scenes/carimbo/templates/default_carimbo.tres"
+}
 
 [node name="Area3D" type="Area3D" parent="." unique_id=2095971492]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

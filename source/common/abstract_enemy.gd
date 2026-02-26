@@ -3,6 +3,7 @@ class_name AbstractEnemy
 extends CharacterBody3D
 
 signal enemy_died(id: String)
+signal enemy_attacked(strength: float)
 
 @export var Name := "Default"
 @export var Health: float = 100.0

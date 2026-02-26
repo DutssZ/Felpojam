@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CarimboResource" format=3 uid="uid://dmj2chay05owi"]
+
+[ext_resource type="Texture2D" uid="uid://bipqm0lgwtl48" path="res://source/assets/sprites/marca/2000px Basico.png" id="1_bvbsd"]
+[ext_resource type="Script" uid="uid://dcjfkt3tfvrap" path="res://source/common/carimbo_resource.gd" id="1_o37tw"]
+[ext_resource type="ArrayMesh" uid="uid://chbqlr8irf6t4" path="res://source/scenes/carimbo/mesh/basico_mesh.tres" id="2_d56qi"]
+
+[resource]
+script = ExtResource("1_o37tw")
+Nome = "Basic"
+Alcance = 3.5
+CarimboMesh = ExtResource("2_d56qi")
+CarimboImage = ExtResource("1_bvbsd")
+metadata/_custom_type_script = "uid://dcjfkt3tfvrap"

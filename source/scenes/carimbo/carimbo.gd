@@ -16,6 +16,7 @@ extends Node3D
 
 @export_group("Nodes")
 @export var Player: CharacterBody3D
+@export var Cursor: Node2D
 
 # On ready
 @onready var MeshCarimbo: MeshInstance3D = $Area3D/ScalePivot/MeshCarimbo
@@ -50,7 +51,7 @@ var last_cooldown_duration := 0.0
 
 # Built in 
 func _ready() -> void:
-	set_template("Default")
+	set_template(CarimboConfig.Nome)
 	cursor_position = get_area_position()
 	is_falling = false
 	CooldownTimer.one_shot = true
@@ -80,19 +81,25 @@ func get_area_position() -> Vector3:
 
 func set_material() -> void:
 	var color: Color
+	var cursor_is_cross: bool = false
+	
 	if is_falling:
 		color = DEFAULT_COLOR
 	elif CooldownTimer.time_left > 0:
 		color = RED
 		color.a = ALPHA
+		cursor_is_cross = true
 	elif cursor_position.distance_to(Player.position) > CarimboConfig.Alcance:
 		color = RED
 		color.a = ALPHA
+		cursor_is_cross = true
 	else:
 		color = GREEN
 		color.a = ALPHA
 	
 	MeshCarimbo.material_override.set("albedo_color", color)
+	if Cursor and Cursor.has_method("set_image_cross"):
+		Cursor.set_image_cross(cursor_is_cross)
 
 func fall() -> void:
 	if CooldownTimer.time_left > 0:

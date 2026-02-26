@@ -6,11 +6,15 @@ extends Node2D
 @onready var CursorSprite: Sprite2D = $Sprite2D
 var mouse_pos := Vector2()
 
+const pointer_image = preload("res://source/assets/interface/sample_cursor/1 cursor.png")
+const cross_image = preload("res://source/assets/interface/sample_cursor/6 cancel.png")
+
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	assert(CursorSprite != null)
 	CursorSprite.scale = Vector2(MouseSize, MouseSize)
+	set_image_cross(false)
 
 
 func _process(delta: float) -> void:
@@ -26,5 +30,8 @@ func _input(event: InputEvent) -> void:
 		mouse_pos = event.position
 
 
-func set_image(image: Texture2D) -> void:
-	CursorSprite.texture = image
+func set_image_cross(cross: bool = true) -> void:
+	if cross:
+		CursorSprite.texture = cross_image
+	else:
+		CursorSprite.texture = pointer_image

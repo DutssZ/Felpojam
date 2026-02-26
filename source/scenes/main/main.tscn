@@ -29,9 +29,10 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -4)
 MAX_SPEED = 8.0
 DASH_SPEED = 20.0
 
-[node name="Carimbo" parent="." unique_id=1970425901 node_paths=PackedStringArray("Player") instance=ExtResource("4_2ssni")]
+[node name="Carimbo" parent="." unique_id=1970425901 node_paths=PackedStringArray("Player", "Cursor") instance=ExtResource("4_2ssni")]
 Scale = 2.0
 Player = NodePath("../Player3D")
+Cursor = NodePath("../Layer - Cursor/Cursor")
 
 [node name="World" parent="." unique_id=572738305 instance=ExtResource("4_5pj5g")]
 
