@@ -6,6 +6,11 @@ var ui_Animation_Playing := false
 const position_away = 1080.0
 @export var transition_time = 0.5
 
+# Modificar o cursor!!
+# if Cursor and Cursor.has_method("play_hide"):
+#	await Cursor.play_hide(duration)
+@export var Cursor: Node2D
+
 @onready var fade = $Fade
 
 @onready var titleMenu = $"Menu Inicial"

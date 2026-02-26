@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://sh6ck64df3v7" path="res://source/scenes/carimbo/carimbo.gd" id="1_shnse"]
 [ext_resource type="Resource" uid="uid://dmj2chay05owi" path="res://source/scenes/carimbo/templates/basic_carimbo.tres" id="2_fxh7s"]
 [ext_resource type="Material" uid="uid://cifaw3sxikc3g" path="res://source/scenes/carimbo/carimbo_material.tres" id="2_jc8v7"]
-[ext_resource type="ArrayMesh" uid="uid://cuga1v41siybo" path="res://source/scenes/carimbo/mesh/demitido_mesh.tres" id="5_pqvly"]
+[ext_resource type="ArrayMesh" uid="uid://chbqlr8irf6t4" path="res://source/scenes/carimbo/mesh/basico_mesh.tres" id="4_fxh7s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jm7m4"]
 size = Vector3(1, 0.8223877, 0.76342773)
@@ -33,7 +33,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0074330345, 0)
 [node name="MeshCarimbo" type="MeshInstance3D" parent="Area3D/ScalePivot" unique_id=596812943]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.013821609, 0)
 material_override = ExtResource("2_jc8v7")
-mesh = ExtResource("5_pqvly")
+mesh = ExtResource("4_fxh7s")
 
 [node name="CooldownTimer" type="Timer" parent="." unique_id=11287411]
 one_shot = true

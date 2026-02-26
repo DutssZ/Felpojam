@@ -22,7 +22,8 @@ process_mode = 3
 [node name="Layer - Main Menu" type="CanvasLayer" parent="." unique_id=1037938286]
 follow_viewport_enabled = true
 
-[node name="Main Menu" parent="Layer - Main Menu" unique_id=294159731 instance=ExtResource("2_akbd6")]
+[node name="Main Menu" parent="Layer - Main Menu" unique_id=294159731 node_paths=PackedStringArray("Cursor") instance=ExtResource("2_akbd6")]
+Cursor = NodePath("../../Layer - Cursor/Cursor")
 
 [node name="Player3D" parent="." unique_id=2492256 instance=ExtResource("2_gu03f")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -4)

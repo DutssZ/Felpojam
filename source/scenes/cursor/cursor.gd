@@ -35,3 +35,29 @@ func set_image_cross(cross: bool = true) -> void:
 		CursorSprite.texture = cross_image
 	else:
 		CursorSprite.texture = pointer_image
+
+
+func play_hide(duration:float = 1.0):
+	if CursorSprite.modulate.a == 0.0:
+		return
+		
+	var tween = create_tween()
+	
+	tween.tween_property(
+		CursorSprite, "modulate:a", 0.0, duration
+	).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
+	
+	return tween.finished
+
+
+func play_show(duration:float = 1.0):
+	if CursorSprite.modulate.a == 1.0:
+		return
+	
+	var tween = create_tween()
+	
+	tween.tween_property(
+		CursorSprite, "modulate:a", 1.0, duration*0.5
+	).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
+	
+	return tween.finished
